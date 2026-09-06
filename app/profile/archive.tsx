@@ -32,7 +32,7 @@ export default function ArchiveScreen() {
 const styles = StyleSheet.create({
   container: { flex: 1, backgroundColor: '#FAFBFD', paddingTop: Platform.OS === 'android' ? NativeStatusBar.currentHeight : 0 },
   header: { flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center', paddingHorizontal: 20, height: 60 },
-  iconBtn: { width: 40, height: 40, borderRadius: 12, backgroundColor: '#FFFFFF', justifyContent: 'center', alignItems: 'center', borderWidth: 1, borderColor: '#EDF2F7' },
+  iconBtn: { width: 40, height: 40, borderRadius: 12, justifyContent: 'center', alignItems: 'center'},
   headerTitle: { fontSize: 16, fontWeight: '600', color: '#1E293B' },
   centerContainer: { flex: 1, justifyContent: 'center', alignItems: 'center', paddingHorizontal: 40 },
   iconCircle: { width: 80, height: 80, borderRadius: 24, backgroundColor: '#EBF6F5', justifyContent: 'center', alignItems: 'center', marginBottom: 20 },

@@ -1,8 +1,8 @@
-import React, { useState } from 'react';
-import { View, Text, TouchableOpacity, StyleSheet, SafeAreaView, Platform, StatusBar as NativeStatusBar } from 'react-native';
-import { useRouter } from 'expo-router';
 import { Ionicons } from '@expo/vector-icons';
+import { useRouter } from 'expo-router';
 import { StatusBar } from 'expo-status-bar';
+import React, { useState } from 'react';
+import { StatusBar as NativeStatusBar, Platform, SafeAreaView, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 
 export default function AppearanceScreen() {
   const router = useRouter();
@@ -37,7 +37,7 @@ export default function AppearanceScreen() {
               <Ionicons name={theme.icon as any} size={20} color={theme.disabled ? "#94A3B8" : "#475569"} style={{ marginRight: 12 }} />
               <Text style={[styles.rowLabel, theme.disabled && styles.disabledText]}>{theme.label}</Text>
             </View>
-            {selectedTheme === theme.id && <Ionicons name="checkmark-circle" size={20} color="#3AA39F" />}
+            {selectedTheme === theme.id && <Ionicons name="checkmark-circle" size={20} color="#173D45" />}
           </TouchableOpacity>
         ))}
       </View>
@@ -48,12 +48,12 @@ export default function AppearanceScreen() {
 const styles = StyleSheet.create({
   container: { flex: 1, backgroundColor: '#FAFBFD', paddingTop: Platform.OS === 'android' ? NativeStatusBar.currentHeight : 0 },
   header: { flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center', paddingHorizontal: 20, height: 60 },
-  iconBtn: { width: 40, height: 40, borderRadius: 12, backgroundColor: '#FFFFFF', justifyContent: 'center', alignItems: 'center', borderWidth: 1, borderColor: '#EDF2F7' },
+  iconBtn: { width: 40, height: 40, borderRadius: 12, justifyContent: 'center', alignItems: 'center'}, 
   headerTitle: { fontSize: 16, fontWeight: '600', color: '#1E293B' },
   content: { paddingHorizontal: 20, marginTop: 24 },
   sectionLabel: { fontSize: 12, fontWeight: '600', color: '#94A3B8', textTransform: 'uppercase', marginBottom: 12, letterSpacing: 0.5 },
   rowItem: { flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center', backgroundColor: '#FFFFFF', padding: 16, borderRadius: 16, marginBottom: 10, borderWidth: 1, borderColor: '#F1F5F9' },
-  activeRow: { borderColor: '#3AA39F', backgroundColor: '#F0F9F8' },
+  activeRow: { borderColor: '#173D45', backgroundColor: '#F0F9F8' },
   rowLeft: { flexDirection: 'row', alignItems: 'center' },
   rowLabel: { fontSize: 14, fontWeight: '500', color: '#1E293B' },
   disabledText: { color: '#94A3B8' }

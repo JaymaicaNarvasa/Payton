@@ -2,7 +2,7 @@ import { Ionicons } from '@expo/vector-icons';
 import { useRouter } from 'expo-router';
 import { StatusBar } from 'expo-status-bar';
 import React from 'react';
-import { StatusBar as NativeStatusBar, Platform, SafeAreaView, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
+import { Image, StatusBar as NativeStatusBar, Platform, SafeAreaView, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 
 export default function AboutScreen() {
   const router = useRouter();
@@ -19,8 +19,8 @@ export default function AboutScreen() {
       </View>
 
       <View style={styles.content}>
-        <View style={styles.logoBox}>
-          <Text style={styles.logoText}>P</Text>
+        <View>
+          <Image source={require('@/assets/images/logo-light1.png')} style={{ width: 80, height: 80, borderRadius: 16 }} />
         </View>
 
         <Text style={styles.appName}>Payton Mobile Edition</Text>
@@ -50,10 +50,10 @@ export default function AboutScreen() {
 const styles = StyleSheet.create({
   container: { flex: 1, backgroundColor: '#FAFBFD', paddingTop: Platform.OS === 'android' ? NativeStatusBar.currentHeight : 0 },
   header: { flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center', paddingHorizontal: 20, height: 60 },
-  iconBtn: { width: 40, height: 40, borderRadius: 12, backgroundColor: '#FFFFFF', justifyContent: 'center', alignItems: 'center', borderWidth: 1, borderColor: '#EDF2F7' },
+  iconBtn: { width: 40, height: 40, borderRadius: 12, justifyContent: 'center', alignItems: 'center'},
   headerTitle: { fontSize: 16, fontWeight: '600', color: '#1E293B' },
   content: { flex: 1, alignItems: 'center', paddingTop: 40, paddingHorizontal: 20 },
-  logoBox: { width: 80, height: 80, borderRadius: 24, backgroundColor: '#3AA39F', justifyContent: 'center', alignItems: 'center', marginBottom: 16 },
+  // logoBox: { width: 100, height: 100, borderRadius: 20, justifyContent: 'center', alignItems: 'center', marginBottom: 16, backgroundColor: '#173D45' },
   logoText: { fontSize: 36, fontWeight: '800', color: '#FFFFFF' },
   appName: { fontSize: 18, fontWeight: '700', color: '#1E293B', marginBottom: 4 },
   versionNumber: { fontSize: 13, color: '#94A3B8', fontWeight: '500', marginBottom: 32 },

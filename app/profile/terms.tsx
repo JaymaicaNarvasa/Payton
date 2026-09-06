@@ -11,7 +11,7 @@ export default function TermsScreen() {
     <SafeAreaView style={styles.container}>
       <StatusBar style="dark" />
       <View style={styles.header}>
-        <TouchableOpacity style={styles.iconBtn} onPress={() => router.back()}>
+        <TouchableOpacity onPress={() => router.back()}>
           <Ionicons name="arrow-back" size={20} color="#1E293B" />
         </TouchableOpacity>
         <Text style={styles.headerTitle}>Terms of Use</Text>
@@ -37,7 +37,7 @@ export default function TermsScreen() {
 const styles = StyleSheet.create({
   container: { flex: 1, backgroundColor: '#FAFBFD', paddingTop: Platform.OS === 'android' ? NativeStatusBar.currentHeight : 0 },
   header: { flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center', paddingHorizontal: 20, height: 60 },
-  iconBtn: { width: 40, height: 40, borderRadius: 12, backgroundColor: '#FFFFFF', justifyContent: 'center', alignItems: 'center', borderWidth: 1, borderColor: '#EDF2F7' },
+  iconBtn: { width: 40, height: 40, borderRadius: 12, justifyContent: 'center', alignItems: 'center'},
   headerTitle: { fontSize: 16, fontWeight: '600', color: '#1E293B' },
   scrollContent: { paddingHorizontal: 20, paddingTop: 20, paddingBottom: 40 },
   lastUpdated: { fontSize: 12, color: '#94A3B8', marginBottom: 20 },

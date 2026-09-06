@@ -44,20 +44,21 @@ export default function ChangePasswordScreen() {
     <SafeAreaView style={styles.container}>
       <StatusBar style="dark" />
       <View style={styles.header}>
-        <TouchableOpacity style={styles.iconBtn} onPress={() => router.back()}>
+        <TouchableOpacity onPress={() => router.back()} style={styles.backBtnTouchable}>
           <Ionicons name="arrow-back" size={20} color="#1E293B" />
         </TouchableOpacity>
-        <Text style={styles.headerTitle}>Security & Password</Text>
-        <View style={{ width: 40 }} />
+        <View style={{ width: 20 }} />
       </View>
 
-      <View style={styles.content}>
+      <View style={styles.card}>
+        <Text style={styles.cardTitle}>Change Password</Text>
+
         <Text style={styles.instruction}>Enter your new password below to secure your account.</Text>
         
-        <View style={styles.inputBlock}>
-          <Text style={styles.inputLabel}>New Password</Text>
+        <Text style={styles.inputLabel}>New Password</Text>
+        <View style={styles.pillInputBlock}>
           <TextInput 
-            style={styles.textInput} 
+            style={styles.pillTextInput} 
             value={newPassword} 
             onChangeText={setNewPassword} 
             placeholder="Min. 6 characters"
@@ -66,24 +67,24 @@ export default function ChangePasswordScreen() {
           />
         </View>
 
-        <View style={styles.inputBlock}>
-          <Text style={styles.inputLabel}>Confirm New Password</Text>
-          <TextInput 
-            style={styles.textInput} 
-            value={confirmPassword} 
-            onChangeText={setConfirmPassword} 
+        <Text style={styles.inputLabel}>Confirm Password</Text>
+        <View style={styles.pillInputBlock}>
+          <TextInput
+            style={styles.pillTextInput}
+            value={confirmPassword}
+            onChangeText={setConfirmPassword}
             placeholder="Repeat new password"
             secureTextEntry
             placeholderTextColor="#94A3B8"
           />
         </View>
 
-        <TouchableOpacity 
-          style={[styles.primaryBtn, isUpdating && styles.disabledBtn]} 
+        <TouchableOpacity
+          style={[styles.primaryBtn, isUpdating && styles.disabledBtn]}
           onPress={handleChangePassword}
           disabled={isUpdating}
         >
-          {isUpdating ? <ActivityIndicator color="#FFFFFF" /> : <Text style={styles.primaryBtnText}>Update Password</Text>}
+          {isUpdating ? <ActivityIndicator color="#FFFFFF" /> : <Text style={styles.primaryBtnText}>SAVE</Text>}
         </TouchableOpacity>
       </View>
     </SafeAreaView>
@@ -91,16 +92,70 @@ export default function ChangePasswordScreen() {
 }
 
 const styles = StyleSheet.create({
-  container: { flex: 1, backgroundColor: '#FAFBFD', paddingTop: Platform.OS === 'android' ? NativeStatusBar.currentHeight : 0 },
-  header: { flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center', paddingHorizontal: 20, height: 60 },
-  iconBtn: { width: 40, height: 40, borderRadius: 12, backgroundColor: '#FFFFFF', justifyContent: 'center', alignItems: 'center', borderWidth: 1, borderColor: '#EDF2F7' },
-  headerTitle: { fontSize: 16, fontWeight: '600', color: '#1E293B' },
-  content: { paddingHorizontal: 20, marginTop: 20 },
-  instruction: { fontSize: 14, color: '#64748B', marginBottom: 24, lineHeight: 20 },
-  inputBlock: { backgroundColor: '#FFFFFF', paddingHorizontal: 16, paddingVertical: 10, borderRadius: 16, borderWidth: 1, borderColor: '#E2E8F0', marginBottom: 16 },
-  inputLabel: { fontSize: 11, fontWeight: '600', color: '#94A3B8', textTransform: 'uppercase', marginBottom: 2, letterSpacing: 0.3 },
-  textInput: { fontSize: 15, color: '#1E293B', fontWeight: '500', height: 30, padding: 0 },
-  primaryBtn: { backgroundColor: '#3AA39F', height: 52, borderRadius: 16, justifyContent: 'center', alignItems: 'center', marginTop: 16 },
-  primaryBtnText: { color: '#FFFFFF', fontSize: 15, fontWeight: '600' },
-  disabledBtn: { backgroundColor: '#CBD5E1' }
+  container: {
+    flex: 1,
+    backgroundColor: '#FAFBFD',
+    paddingTop: Platform.OS === 'android' ? NativeStatusBar.currentHeight : 0,
+  },
+  header: {
+    flexDirection: 'row',
+    justifyContent: 'flex-start',
+    alignItems: 'center',
+    paddingHorizontal: 20,
+    height: 60,
+  },
+  backBtnTouchable: { width: 20 },
+  card: {
+    marginHorizontal: 18,
+    marginTop: 12,
+    paddingHorizontal: 16,
+  },
+  cardTitle: {
+    fontSize: 18,
+    fontWeight: '800',
+    color: '#1E293B',
+    textAlign: 'center',
+    marginBottom: 16,
+    letterSpacing: -0.3,
+  },
+  instruction: {
+    fontSize: 13,
+    color: '#050505',
+    textAlign: 'center',
+    marginBottom: 20,
+    lineHeight: 19,
+  },
+  pillInputBlock: {
+    borderWidth: 1,
+    borderColor: '#dbe0e6',
+    borderRadius: 30,
+    paddingVertical: 14,
+    paddingHorizontal: 20,
+    fontSize: 15,
+    backgroundColor: '#ffffff',
+    fontWeight: '500',
+    marginBottom: 14,
+  },
+  inputLabel: {
+    fontSize: 13,
+    fontWeight: '500',
+    color: '#94A3B8',
+    marginBottom: 6,
+    paddingLeft: 5,
+  },
+  pillTextInput: {
+    fontSize: 15,
+    color: '#000000',
+    fontWeight: '500',
+    padding: 0,
+  },
+  primaryBtn: {
+    backgroundColor: '#173D45',
+    borderRadius: 30,
+    paddingVertical: 16,
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  primaryBtnText: { color: '#FFFFFF', fontSize: 15, fontWeight: '700', letterSpacing: 1 },
+  disabledBtn: { backgroundColor: '#CBD5E1' },
 });
