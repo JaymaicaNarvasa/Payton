@@ -413,6 +413,9 @@ const styles = StyleSheet.create({
   groupCard: {
     backgroundColor: '#FFFFFF',
     borderRadius: 22,
+    borderColor: '#E2E8F0',
+    borderWidth: 1,
+    shadowColor: '#0F172A',
     overflow: 'hidden',
   },
   rowItemFlat: {

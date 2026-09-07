@@ -774,7 +774,7 @@ export default function SpenderHomeScreen() {
               </View>
               <Text style={styles.emptyText}>All clear! No upcoming dues.</Text>
               <TouchableOpacity style={styles.addDueButton} onPress={() => router.push('/reminders')}>
-                <Ionicons name="add-circle-outline" size={16} color={COLORS.olive} />
+                <Ionicons name="add-circle-outline" size={16} color={COLORS.headerDark} />
                 <Text style={styles.addDueButtonText}>Add a reminder</Text>
               </TouchableOpacity>
             </View>
@@ -1108,7 +1108,7 @@ const styles = StyleSheet.create({
     flexDirection: 'row', alignItems: 'center', gap: 8, marginTop: 14, paddingVertical: 10, paddingHorizontal: 20,
     borderRadius: 24, backgroundColor: '#F0FDF4', borderWidth: 1, borderColor: '#DCFCE7',
   },
-  addDueButtonText: { fontSize: 13, color: COLORS.olive, fontWeight: '600' },
+  addDueButtonText: { fontSize: 13, color: COLORS.headerDark, fontWeight: '600' },
   emptyBox: {
     padding: 28, backgroundColor: COLORS.card, borderRadius: 22, alignItems: 'center',
     shadowColor: '#000', shadowOffset: { width: 0, height: 4 }, shadowOpacity: 0.06, shadowRadius: 12, elevation: 3,
