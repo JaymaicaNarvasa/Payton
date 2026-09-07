@@ -377,16 +377,15 @@ export default function StatisticsScreen() {
     <SafeAreaView style={styles.screenBg}>
       <StatusBar style="dark" />
 
-      {/* WHITE ROUNDED SHEET — starts just under the thin teal strip up top */}
       <View style={styles.whiteSheet}>
         <View style={styles.fixedTopContent}>
           <View style={splitStyles.headerLeft}>
             <TouchableOpacity 
               activeOpacity={0.7} 
-              onPress={() => router.back()} 
+              onPress={() => router.replace('/(spenderTabs)/budget')} 
               style={{ marginRight: 12 }}
             >
-              <Ionicons name="arrow-back" size={22} color="#1F4F59" />
+              <Ionicons name="arrow-back" size={18} color="#1F4F59" />
             </TouchableOpacity>
             <Text style={styles.headerTitle}>Statistics</Text>
           </View>
